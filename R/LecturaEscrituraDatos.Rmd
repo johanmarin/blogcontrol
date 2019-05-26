@@ -1,0 +1,52 @@
+---
+title: "Lectura y Escritura de Datos en R"
+output:
+  html_document:
+    highlight: tango
+    css: style.css
+#    toc: true
+#    toc_float: true
+---
+<script src="https://use.typekit.net/dru0rgp.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    
+```{r, echo = F}
+knitr::opts_chunk$set(cache  = TRUE, eval = TRUE, include = TRUE)
+```
+
+<div class="wrapper">
+
+## Leyendo Matrices y vectores
+
+la función **c** es utilizada comúnmente para introducsir pequeños conjuntos de datos de forma manual; sin embargo cuando los datos se pueden copiar desde otro formato, es mpas conveniente utilizar la fuanción **scan**. Por defecto la función **scan** asume que todas susu entradas son númericas, por lo que en caso de que se quiera asignar otro tipo de entradas se debe de utilizar el argmento **what=**, para especificar el tipo de dato que se va a ingresar.
+
+```{r}
+names = scan(what="")
+"joe fred bob john sam sue robin"
+```
+
+```{r}
+names = scan(what=list(a=0,b="",c=0))
+names
+```
+
+
+
+
+
+
+
+<div class="row" style="margin-top:5rem;">
+<hr class="f">
+<div class="footer">
+<a href="https://github.com/johanmarin" title="github @johanmarin" target="_blank">
+<div class="githubbg- social"></div>
+</a>
+<a href="https://twitter.com/JohanDMarinB" title="twitter @johanmarin" target="_blank">
+<div class="twitter social"></div>
+</a>        &copy; <a class="social" href="mailto:johanmarin@criptext.com">Johan Marin</a>. 
+<div class="otter"></div>
+</div>
+</div>
+</div>
+</div>
