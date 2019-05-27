@@ -166,9 +166,9 @@ Figura 4: Formatos RMarkdown
   
 ###¿Como se compila?
 
-Cuando se selecciona el botón  botón **Knit** el documento R Markdown es procesado por knitr y un documento Markdown simple es producido el código R es ejecutado y reemplazado por ambas la entrada y la salida; si las figuras son producidas, se incluyen enlaces a esas figuras.
+Cuando se selecciona el botón  botón ``Knit`` el documento R Markdown es procesado por knitr y un documento Markdown simple es producido el código R es ejecutado y reemplazado por ambas la entrada y la salida; si las figuras son producidas, se incluyen enlaces a esas figuras.
 
-Los documentos Markdown y figura son entonces procesados por la herramienta pandoc, que convierte el archivo Markdown en un archivo html, con las figuras embebidas. Teniendo en cuenta lo anterior, para poder visualizar el documento final, se tienen dos opciones para compilarlo, la más facil de ellas es utilizando [RStudio](https://www.rstudio.com/), el cual basta con tener instalado el paquete **rmarkdown**, la otra opción es utilizando [R](https://www.r-project.org) e instalar tambien [Pandoc](http://pandoc.org).
+Los documentos Markdown y figura son entonces procesados por la herramienta pandoc, que convierte el archivo Markdown en un archivo html, con las figuras embebidas. Teniendo en cuenta lo anterior, para poder visualizar el documento final, se tienen dos opciones para compilarlo, la más facil de ellas es utilizando [RStudio](https://www.rstudio.com/), el cual basta con tener instalado el paquete ``rmarkdown``, la otra opción es utilizando [R](https://www.r-project.org) e instalar tambien [Pandoc](http://pandoc.org).
 
 
   [![](./images/compileRMD.png)](./images/compileRMD.png)
@@ -188,7 +188,7 @@ Figura 6: Documento ejemplo archivo .Rmd
 
 </center>
 
-Al crear el primer documento Rmarkdown, R por defecto pone un ejemplo, figur 6. Lo primero que se observa es la cabecera, va entre tres líneas y allí se especifica el título del documento, el autor, la fecha, todo de manera opcional, junto con la salida del documento, con la palabra **output**, en la que se puede editar el tipo de salida que se especificó inicialmente (html_document, Word_document, pdf_document, html_notebook), o incluso que se generen varias salidas.
+Al crear el primer documento Rmarkdown, R por defecto pone un ejemplo, figur 6. Lo primero que se observa es la cabecera, va entre tres líneas y allí se especifica el título del documento, el autor, la fecha, todo de manera opcional, junto con la salida del documento, con la palabra ``output``, en la que se puede editar el tipo de salida que se especificó inicialmente (html_document, Word_document, pdf_document, html_notebook), o incluso que se generen varias salidas.
 
     ---
     title: "Documento inicial **R Markdown**"
@@ -221,7 +221,7 @@ summary(cars)
 ```
 
 ###Include y echo
-Las funciones **include** Y **echo** permiten que se muestre o no, el bloque de código y el resultado respectivamente.
+Las funciones ``include`` Y ``echo`` permiten que se muestre o no, el bloque de código y el resultado respectivamente.
 
 
     ´´´{r, include = F, Eval = T, Echo = F}
@@ -238,7 +238,7 @@ En ocasiones cuando se desea utilizar python en R no es posible realizar no se i
 ##Configuración del documento
 
 
-Para configurar los valores por defecto del documento, se puede hacer uso de la función **knitr::opts_chunk$set**, una de las maś útiles cuando se realizan informes muy largos o con códigos que tardan mucho tiempo en compilar, de modo que es conveniente guardar el cache de modo que cuando se cierre el documento, no sea necesario volver a correr todos los códigos nuevamente y poder continuar donde se dejó.
+Para configurar los valores por defecto del documento, se puede hacer uso de la función ``knitr::opts_chunk$set``, una de las maś útiles cuando se realizan informes muy largos o con códigos que tardan mucho tiempo en compilar, de modo que es conveniente guardar el cache de modo que cuando se cierre el documento, no sea necesario volver a correr todos los códigos nuevamente y poder continuar donde se dejó.
 
 
 ```{r, eval=F}
@@ -263,11 +263,11 @@ plot(cars$speed, main="Tamaño modificado")
 
 ###Código in-line
 
-Además de esto Rmarkdown tiene la capacidad de ejecutar códigos dentro del mismo texto, haciendo uso de tilde simple con r, seguido de la función **´r ncol(cars)´**, y hacer uso de códigos markdown o html sobre esta.
+Además de esto Rmarkdown tiene la capacidad de ejecutar códigos dentro del mismo texto, haciendo uso de tilde simple con r, seguido de la función `` `r ncol(cars)` ``, y hacer uso de códigos markdown o html sobre esta.
 
 ###Strings Externos
 
-En ocasiones se quiere mostrar el contenido de strings previamente escritos por aparte, además de la finción **read_chunk**, que permite utilizar el código de cualquier archivo .R por medio de su ubicación.
+En ocasiones se quiere mostrar el contenido de strings previamente escritos por aparte, además de la finción ``read_chunk``, que permite utilizar el código de cualquier archivo .R por medio de su ubicación.
 
 ```{r, eval=FALSE}
 knitr::read_chunk('map.R')
@@ -287,7 +287,7 @@ Por otra parte RStudio en la parte de abajo del editor, hay un botón pequeño q
 
 ###El paquete htmlTable
 
-RMarkdown tiene como objetivo la presentación de informes, sin embargo, salida de los código no es la más estética, por lo que RMarkdown permite también generar tablas HTML, para mostrar las salidas. Para esto se hace uso del paquete **htmlTable**, se puede utilizar *caption* para comentar al principio de la tabla y *tfoot* para poner un pie a la tabla.
+RMarkdown tiene como objetivo la presentación de informes, sin embargo, salida de los código no es la más estética, por lo que RMarkdown permite también generar tablas HTML, para mostrar las salidas. Para esto se hace uso del paquete ``htmlTable``, se puede utilizar ``caption`` para comentar al principio de la tabla y ``tfoot`` para poner un pie a la tabla.
 
 ```{r}
 library(htmlTable )
@@ -314,24 +314,20 @@ htmlTable(head(cars),
 [2] <https://bookdown.org/yihui/rmarkdown/yihui-xie.html>
 
 <div class="nine" style="margin-top:12rem;">
-<hr>  
-<h3>Para ponerse en contacto, <a href="mailto:johanmarin@criptext.com">johanmarin@criptext.com</a>.</h3>
-</div>
-<div class="row" style="margin-top:5rem;">
-<hr class="f">
-<div class="footer">
-<a href="https://github.com/johanmarin" title="github @johanmarin" target="_blank">
-<div class="github social"></div>
-</a>
-<a href="https://twitter.com/JohanDMarinB" title="twitter @johanmarin" target="_blank">
-<div class="twitter social"></div>
-</a>
-&copy; <a class="social" href="mailto:johanmarin@criptext.com">Johan Marin</a>.  Made in COL.
-<a href="https://www.google.com/" title="blog @otterblog" target="_blank">
-<div class="logo2x social"></div>
-</a>
-</div>
-</div>
-</div>
-</div>
-
+  <hr>  
+  <h3>Para ponerse en contacto, <a href="mailto:johanmarin@criptext.com">johanmarin@criptext.com</a>.</h3>
+  </div>
+  <div class="row" style="margin-top:5rem;">
+  <hr class="f">
+  <div class="footer">
+  <a href="https://github.com/johanmarin" title="github @johanmarin" target="_blank">
+  <div class="github social"></div>
+  </a>
+  &copy; 2019 <a class="social" href="https://www.linkedin.com/in/johan-david-mar%C3%ADn-benjumea-742a45142" target="_blank">Johan Marin</a>.  Made in COL.
+<a href="https://johanmarin.github.io/otterblog/" title="blog @otterblog" target="_blank">
+  <div class="logo2x social"></div>
+  </a>
+  </div>
+  </div>
+  </div>
+  </div>

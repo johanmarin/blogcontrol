@@ -353,7 +353,7 @@ div.tocify {
 <p>Figura 1: Menú nuevo documento R studio</p>
 </center>
 <p>Para crear una app en el menú nuevo, figura 1, se elige la opción Shiny Web App.</p>
-<p>En shiny la interfaz de usuario o interfaz gráfica, se suele denominar <strong>ui.R</strong> y el servidor <strong>server.R</strong>, cada uno en un script diferente, sin embargo desde la versión 3.0 de R shiny puede crearse desde un solo fichero, en lugar de tener un fichero <strong>ui</strong> y uno <strong>server</strong>, en un mismo archivo habrá una función para cada uno de ellos, que se compilan al final con <em>´r shinyApp(ui = ui, server = server)´</em>.</p>
+<p>En shiny la interfaz de usuario o interfaz gráfica, se suele denominar <strong>ui.R</strong> y el servidor <strong>server.R</strong>, cada uno en un script diferente, sin embargo desde la versión 3.0 de R shiny puede crearse desde un solo fichero, en lugar de tener un fichero <code>ui</code> y uno <code>server</code>, en un mismo archivo habrá una función para cada uno de ellos, que se compilan al final con <code>shinyApp(ui = ui, server = server)</code>.</p>
 <a href="./images/shinyCreate.png"><img src="data:image/png;base64,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" /></a>
 <center>
 <p>Figura 2: Menú nueva shiyn app</p>
@@ -368,7 +368,7 @@ div.tocify {
 <center>
 <p>Figura 3: Ejemplo shiny app Rstudio</p>
 </center>
-<p>Por defecto Rstudio pone por defecto una app sencilla con un histograma, para que se pueda interactuar y observar el funcionamiento básico de una app en shiny. Ahí se puede modificar fácilmente las entradas en el espacio de diseño <strong>sidebarLayout</strong>.</p>
+<p>Por defecto Rstudio pone por defecto una app sencilla con un histograma, para que se pueda interactuar y observar el funcionamiento básico de una app en shiny. Ahí se puede modificar fácilmente las entradas en el espacio de diseño <code>sidebarLayout</code>.</p>
 <pre><code>&amp;beta;</code></pre>
 <p>β</p>
 <div id="shiny-ui" class="section level3">
@@ -398,34 +398,34 @@ div.tocify {
 <div id="entradas-en-shiny-ui" class="section level4">
 <h4>Entradas en Shiny ui</h4>
 <p>Una de las características de shiny es que permite que el usuario pueda modificar lasne varios y cosas desde la interfaz gráfica, para esto shiny tipos de entrada; el que viene por defecto en el ejemplo es sliderinput, sin embargo Shiny permite crear también otros tipos de entrada.</p>
-<p>Lo primero que se debe de hacer es ubicar dónde estarán las entradas, por defecto shiny utiliza un <strong>sidebarPanel</strong> una barra donde generalmente se ubican las entradas y que por defecto se alinea en la parte superior izquierda del espacio de diseño.</p>
+<p>Lo primero que se debe de hacer es ubicar dónde estarán las entradas, por defecto shiny utiliza un <code>sidebarPanel</code> una barra donde generalmente se ubican las entradas y que por defecto se alinea en la parte superior izquierda del espacio de diseño.</p>
 <ul>
-<li><strong>sliderInput:</strong> Permite crear una barra con una escala numérica a través de la cual el usuario puede elegir un número.</li>
-<li><strong>selectInput:</strong> Permite crear una lista de opciones, de las cuales el usuario puede seleccionar una de ellas.</li>
+<li><code>sliderInput</code> Permite crear una barra con una escala numérica a través de la cual el usuario puede elegir un número.</li>
+<li><code>selectInput</code> Permite crear una lista de opciones, de las cuales el usuario puede seleccionar una de ellas.</li>
 </ul>
 <p>Cada una de estas entradas tienen varios argumentos:</p>
 <ul>
-<li><em>ID: </em>Permite asignarle un nombre a la entrada de modo que se pueda identificar desde cualquier parte del código; en el ejemplo por ejemplo utiliza “bins”.</li>
-<li><em>Nombre: </em>Permite poner texto sobre el botón de modo que sea visible para el usuario; “Number of bins:”.</li>
-<li><em>Valores: </em>Luego se ponen los valores que puede seleccionar el usuario, Este argumento varía según el tipo de entrada que se tenga. sliderInput: Tal y como se muestra en el ejemplo se elige el máximo y el mínimo en la escala,por defecto R elige una escala, sin embargo puede elegirse el tamaño mínimo de este, utilizando el comando <strong>step = </strong> selectInput: En este caso los valores se asignan utilizando el argumento <strong>choices = </strong> una lista con la función concatenar de R <strong>c()</strong>.</li>
-<li><em>Valor por defecto: </em>El valor por defecto es el valor que tendrá la entrada cuando se inicia la app; <strong>value</strong>.</li>
-<li><em>Animación: </em>Este argumento permite que la entrada se pueda ejecutar de forma animada, cuando este este tiene como valor verdadero, aparece un botón de play que al accionarlo hace que los valores cambien automáticamente</li>
+<li><code>ID</code> Permite asignarle un nombre a la entrada de modo que se pueda identificar desde cualquier parte del código; en el ejemplo por ejemplo utiliza “bins”.</li>
+<li><code>Nombre</code> Permite poner texto sobre el botón de modo que sea visible para el usuario; “Number of bins:”.</li>
+<li><code>Values</code> Luego se ponen los valores que puede seleccionar el usuario, Este argumento varía según el tipo de entrada que se tenga. sliderInput: Tal y como se muestra en el ejemplo se elige el máximo y el mínimo en la escala,por defecto R elige una escala, sin embargo puede elegirse el tamaño mínimo de este, utilizando el comando <code>step =</code>. selectInput: En este caso los valores se asignan utilizando el argumento <strong>choices = </strong> una lista con la función concatenar de R <code>c()</code>.</li>
+<li><code>Animation</code> Este argumento permite que la entrada se pueda ejecutar de forma animada, cuando este este tiene como valor verdadero, aparece un botón de play que al accionarlo hace que los valores cambien automáticamente, puede tomar los valores <code>TRUE</code> ó <code>FALSE</code>.</li>
+<li><code>value</code> Es el valor por defecto es el valor que tendrá la entrada cuando se inicia la app.</li>
 </ul>
 </div>
 <div id="salidas-de-shiny-ui" class="section level4">
 <h4>Salidas de Shiny ui</h4>
-<p>En la <strong>ui</strong> también se debe de especificar, cual es el tipo de salida que mostrará la app, esto se hace dentro de una parte de la app llamada mainPanel esté es el espacio que queda al lado derecho de la barra de entradas. dentro de esta función se pueden utilizar varios tipos de salidas.</p>
+<p>En la <code>ui</code> también se debe de especificar, cual es el tipo de salida que mostrará la app, esto se hace dentro de una parte de la app llamada mainPanel esté es el espacio que queda al lado derecho de la barra de entradas. dentro de esta función se pueden utilizar varios tipos de salidas.</p>
 <ul>
-<li><strong>p: </strong>Es el tipo de salida más básico y permite ponerle título o hacer observaciones de la app, y para esto se utilizan los mismos comandos de HTML.</li>
-<li><strong>verbatimTextOutput: </strong>Permite observar resultados en código.</li>
-<li><strong>plotOutput: </strong>Permite mostrar gráficas estáticas, generadas por los paquetes plot, ggplot, etc.</li>
-<li><strong>plotlyOutput: </strong>Permite mostrar gráficas dinámicas, generadas con el paquete Plotly.</li>
+<li><code>p</code> Es el tipo de salida más básico y permite ponerle título o hacer observaciones de la app, y para esto se utilizan los mismos comandos de HTML.</li>
+<li><code>verbatimTextOutput</code> Permite observar resultados en código.</li>
+<li><code>plotOutput</code> Permite mostrar gráficas estáticas, generadas por los paquetes plot, ggplot, etc.</li>
+<li><code>plotlyOutput</code> Permite mostrar gráficas dinámicas, generadas con el paquete Plotly.</li>
 </ul>
 <p>De la misma forma que sucede con las entradas, las salidas también tienen como entradas algunos argumentos.</p>
 <ul>
-<li><p><em>ID: </em>De la misma forma que con las entradas permite seleccionar la salida desde cualquier parte del código.</p></li>
-<li><em>Aling: </em>Permite elegir la alineación de la salida; no siempre funciona correctamente.</li>
-<li><p><em>height y Width: </em>Permiten definir el alto y ancho que ocupará la salida en px.</p></li>
+<li><p><code>ID</code> De la misma forma que con las entradas permite seleccionar la salida desde cualquier parte del código.</p></li>
+<li><code>Aling</code> Permite elegir la alineación de la salida; no siempre funciona correctamente.</li>
+<li><p><code>height y Width</code> Permiten definir el alto y ancho que ocupará la salida en px.</p></li>
 </ul>
 </div>
 </div>
@@ -443,8 +443,8 @@ server &lt;-<span class="st"> </span><span class="cf">function</span>(input, out
       <span class="kw">hist</span>(x, <span class="dt">breaks =</span> bins, <span class="dt">col =</span> <span class="st">'darkgray'</span>, <span class="dt">border =</span> <span class="st">'white'</span>)
    })
 }</code></pre></div>
-<p>Como ya se mencionó el server lo que hace es realizar todas las operaciones internas para que la app funcione, para hacer esto shiny hace uso de las salidas y entradas con las que interactúa el usuario, para esto se utilizan dos comandos <strong>Input$ID de la entrada</strong> y <strong>output$ID de la salida</strong>, para llamar entradas y salidas respectivamente.</p>
-<p>Shiny permite también crear una barra que permita tener una app multipágina, esto se hace utilizando el comando <strong>tabPanel()</strong> y dentro de la función lo que irá dentro de cada una de las pestañas. En el caso de que se quiere utilizar las mismas entradas para todas las pestañas se utiliza la función <strong>tabsetPanel</strong>.</p>
+<p>Como ya se mencionó el server lo que hace es realizar todas las operaciones internas para que la app funcione, para hacer esto shiny hace uso de las salidas y entradas con las que interactúa el usuario, para esto se utilizan dos comandos <code>Input\$ID</code> para la entrada y <code>output\$ID</code> para la salida, para llamar entradas y salidas respectivamente.</p>
+<p>Shiny permite también crear una barra que permita tener una app multipágina, esto se hace utilizando el comando <code>tabPanel()</code> y dentro de la función lo que irá dentro de cada una de las pestañas. En el caso de que se quiere utilizar las mismas entradas para todas las pestañas se utiliza la función <code>tabsetPanel</code>.</p>
 <div class="row">
 <hr>
 </div>
@@ -454,13 +454,13 @@ server &lt;-<span class="st"> </span><span class="cf">function</span>(input, out
 <h2>Funciones importantes</h2>
 <div id="la-funcion-render" class="section level3">
 <h3>La función render</h3>
-<p>Para poder que las salidas de la App sean dinámicas; es decir cambian con los cambios que realiza el usuario, Shiny hace uso de la función <strong>render</strong>, esta función puede cambiar dependiendo el tipo de salida que se tenga, para las salidas mencionadas en el punto anterior.</p>
+<p>Para poder que las salidas de la App sean dinámicas; es decir cambian con los cambios que realiza el usuario, Shiny hace uso de la función <code>render</code>, esta función puede cambiar dependiendo el tipo de salida que se tenga, para las salidas mencionadas en el punto anterior.</p>
 <ul>
-<li><strong>renderText: </strong> Para el código.</li>
-<li><strong>renderPlot: </strong>Para gráficos estáticos.</li>
-<li><strong>renderPlotly: </strong>Para gráficos de Plotly.</li>
+<li><code>renderText</code> Para el código.</li>
+<li><code>renderPlot</code> Para gráficos estáticos.</li>
+<li><code>renderPlotly</code> Para gráficos de Plotly.</li>
 </ul>
-<p>Existen otras opciones de esta función, cuya documentación en R o Rstudio se puede ver con el comando <strong>?shiny::render</strong> y la tecla tabular.</p>
+<p>Existen otras opciones de esta función, cuya documentación en R o Rstudio se puede ver con el comando <code>?shiny::render</code> y la tecla tabular.</p>
 <p>Dentro de la función render las funciones funcionan de la misma forma que lo hacen en un script de R.</p>
 </div>
 <div id="la-funcion-reactive" class="section level3">
@@ -478,7 +478,7 @@ server &lt;-<span class="st"> </span><span class="cf">function</span>(input, out
 </div>
 <div id="funcion-conditional" class="section level3">
 <h3>Función Conditional</h3>
-<p>En ocasiones también se requiere que toda la interfaz cambie según las opciones que elija el usuario para esto se utiliza la función <strong>conditionalPanel</strong>, lo que permite que cuando se cumple una condición.</p>
+<p>En ocasiones también se requiere que toda la interfaz cambie según las opciones que elija el usuario para esto se utiliza la función <code>conditionalPanel</code> lo que permite que cuando se cumple una condición.</p>
 <p>Esta función tiene como argumentos, ID y condición.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">conditionalPanel</span>(<span class="st">&quot;nombre&quot;</span>,
                  <span class="dt">condition =</span> <span class="st">&quot;input.plot_type == 'opción'&quot;</span>,
@@ -494,7 +494,7 @@ server &lt;-<span class="st"> </span><span class="cf">function</span>(input, out
 </div>
 <div id="integrar-shiny-y-rmarkdown" class="section level2">
 <h2>Integrar Shiny y Rmarkdown</h2>
-<p>Es posible Integrar Shiny con Rmarkdown, pudiendo generar cosas como simulaciones dentro de un Rmarkdown para esto se utiliza la librería <strong>install_phantomjs</strong> del paquete <strong>webshot</strong>.</p>
+<p>Es posible Integrar Shiny con Rmarkdown, pudiendo generar cosas como simulaciones dentro de un Rmarkdown para esto se utiliza la librería <code>install_phantomjs</code> del paquete <code>webshot</code>*.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;webshot&quot;</span>)
 webshot<span class="op">::</span><span class="kw">install_phantomjs</span>()</code></pre></div>
 <p>Teniendo instaladas las librerías anteriores, pueden integrarse de varias formas, la primera es, alojando la app en un servidor y se vincula con el Rmd utilizando la URL donde está alojada la app.</p>
@@ -528,15 +528,12 @@ Para ponerse en contacto, <a href="mailto:johanmarin@criptext.com">johanmarin@cr
 <div class="github social">
 
 </div>
-</a> <a href="https://twitter.com/JohanDMarinB" title="twitter @johanmarin" target="_blank">
-<div class="twitter social">
-
-</div>
-</a> © <a class="social" href="mailto:johanmarin@criptext.com">Johan Marin</a>. Made in COL. <a href="https://www.google.com/" title="blog @otterblog" target="_blank">
+</a> © 2019 <a class="social" href="https://www.linkedin.com/in/johan-david-mar%C3%ADn-benjumea-742a45142" target="_blank">Johan Marin</a>. Made in COL. <a href="https://johanmarin.github.io/otterblog/" title="blog @otterblog" target="_blank">
 <div class="logo2x social">
 
 </div>
-<p></a></p>
+</a>
+</div>
 </div>
 </div>
 </div>

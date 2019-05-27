@@ -28,7 +28,7 @@ Figura 1: Menú nuevo documento R studio
  
 Para crear una app en el menú nuevo, figura 1, se elige la opción Shiny Web App.
 
-En shiny la interfaz de usuario o interfaz gráfica, se suele denominar **ui.R** y el servidor **server.R**, cada uno en un script diferente, sin embargo desde la versión 3.0 de R shiny puede crearse desde un solo fichero, en lugar de tener un fichero **ui** y uno **server**, en un mismo archivo habrá una función para cada uno de ellos, que se compilan al final con *´r shinyApp(ui = ui, server = server)´*. 
+En shiny la interfaz de usuario o interfaz gráfica, se suele denominar **ui.R** y el servidor **server.R**, cada uno en un script diferente, sin embargo desde la versión 3.0 de R shiny puede crearse desde un solo fichero, en lugar de tener un fichero ``ui`` y uno ``server``, en un mismo archivo habrá una función para cada uno de ellos, que se compilan al final con ``shinyApp(ui = ui, server = server)``. 
 
 [![](./images/shinyCreate.png)](./images/shinyCreate.png)
 <center>
@@ -47,7 +47,7 @@ Figura 3: Ejemplo shiny app Rstudio
 
 </center>
 
-Por defecto Rstudio pone por defecto una app sencilla con un histograma, para que se pueda interactuar y observar el funcionamiento básico de una app en shiny. Ahí se puede modificar fácilmente las entradas en el espacio de diseño **sidebarLayout**.
+Por defecto Rstudio pone por defecto una app sencilla con un histograma, para que se pueda interactuar y observar el funcionamiento básico de una app en shiny. Ahí se puede modificar fácilmente las entradas en el espacio de diseño ``sidebarLayout``.
 
     &beta;
   &beta;
@@ -86,36 +86,37 @@ ui <- fluidPage(
  
 Una de las características de shiny es que permite que el usuario pueda modificar lasne varios y cosas desde la interfaz gráfica, para esto shiny tipos de entrada; el que viene por defecto en el ejemplo es sliderinput, sin embargo Shiny permite crear también otros tipos de entrada.
 
-Lo primero que se debe de hacer es ubicar dónde estarán las entradas, por defecto shiny utiliza un **sidebarPanel** una barra donde generalmente se ubican las entradas y que por defecto se alinea en la parte superior izquierda del espacio de diseño.
+Lo primero que se debe de hacer es ubicar dónde estarán las entradas, por defecto shiny utiliza un ``sidebarPanel`` una barra donde generalmente se ubican las entradas y que por defecto se alinea en la parte superior izquierda del espacio de diseño.
 
-* **sliderInput:** Permite crear una barra con una escala numérica a través de la cual el usuario puede elegir un número.
-* **selectInput:** Permite crear una lista de opciones, de las cuales el usuario puede seleccionar una de ellas.
+* ``sliderInput`` Permite crear una barra con una escala numérica a través de la cual el usuario puede elegir un número.
+* ``selectInput`` Permite crear una lista de opciones, de las cuales el usuario puede seleccionar una de ellas.
 
 Cada una de estas entradas tienen varios argumentos:
 
 
-* *ID: *Permite asignarle un nombre a la entrada de modo que se pueda identificar desde cualquier parte del código; en el ejemplo por ejemplo utiliza "bins".
-* *Nombre: *Permite poner texto sobre el botón de modo que sea visible para el usuario; "Number of bins:".
-* *Valores: *Luego se ponen los valores que puede seleccionar el usuario, Este argumento varía según el tipo de entrada que se tenga.
- sliderInput:  Tal y como se muestra en el ejemplo se elige el máximo y el mínimo en la escala,por defecto R elige una escala, sin embargo puede elegirse el tamaño mínimo de este, utilizando el comando **step = **
-selectInput: En este caso los valores se asignan utilizando el argumento **choices = ** una lista con la función concatenar de R **c()**.
-* *Valor por defecto: *El valor por defecto es el valor que tendrá la entrada cuando se inicia la app; **value**.
-* *Animación: *Este argumento permite que la entrada se pueda ejecutar de forma animada, cuando este este tiene como valor verdadero, aparece un botón de play que al accionarlo hace que los valores cambien automáticamente
+* ``ID`` Permite asignarle un nombre a la entrada de modo que se pueda identificar desde cualquier parte del código; en el ejemplo por ejemplo utiliza "bins".
+* ``Nombre`` Permite poner texto sobre el botón de modo que sea visible para el usuario; "Number of bins:".
+* ``Values`` Luego se ponen los valores que puede seleccionar el usuario, Este argumento varía según el tipo de entrada que se tenga.
+ sliderInput:  Tal y como se muestra en el ejemplo se elige el máximo y el mínimo en la escala,por defecto R elige una escala, sin embargo puede elegirse el tamaño mínimo de este, utilizando el comando ``step = ``.
+selectInput: En este caso los valores se asignan utilizando el argumento **choices = ** una lista con la función concatenar de R ``c()``.
+* ``Animation`` Este argumento permite que la entrada se pueda ejecutar de forma animada, cuando este este tiene como valor verdadero, aparece un botón de play que al accionarlo hace que los valores cambien automáticamente, puede tomar los valores ``TRUE`` ó ``FALSE``.
+* ``value`` Es el valor por defecto es el valor que tendrá la entrada cuando se inicia la app.
+
 
 ####Salidas de Shiny ui
-En la **ui** también se debe de especificar, cual es el tipo de salida que mostrará la app, esto se hace dentro de una parte de la app llamada mainPanel esté es el espacio que queda al lado derecho de la barra de entradas. dentro de esta función se pueden utilizar varios tipos de salidas.
+En la ``ui`` también se debe de especificar, cual es el tipo de salida que mostrará la app, esto se hace dentro de una parte de la app llamada mainPanel esté es el espacio que queda al lado derecho de la barra de entradas. dentro de esta función se pueden utilizar varios tipos de salidas.
 
-* **p: **Es el tipo de salida más básico y permite ponerle título o hacer observaciones de la app, y para esto se utilizan los mismos comandos de HTML.
-* **verbatimTextOutput: **Permite observar resultados en código.
-* **plotOutput: **Permite mostrar gráficas estáticas, generadas por los paquetes plot, ggplot, etc.
-* **plotlyOutput: **Permite mostrar gráficas dinámicas, generadas con el paquete Plotly.
+* ``p`` Es el tipo de salida más básico y permite ponerle título o hacer observaciones de la app, y para esto se utilizan los mismos comandos de HTML.
+* ``verbatimTextOutput`` Permite observar resultados en código.
+* ``plotOutput`` Permite mostrar gráficas estáticas, generadas por los paquetes plot, ggplot, etc.
+* ``plotlyOutput`` Permite mostrar gráficas dinámicas, generadas con el paquete Plotly.
 
 De la misma forma que sucede con las entradas, las salidas también tienen como entradas algunos argumentos.
 
-* *ID: *De la misma forma que con las entradas permite seleccionar la salida desde cualquier parte del código.
+* ``ID`` De la misma forma que con las entradas permite seleccionar la salida desde cualquier parte del código.
 
-* *Aling: *Permite elegir la alineación de la salida; no siempre funciona correctamente.
-* *height y Width: *Permiten definir el alto y ancho que ocupará la salida en px.
+* ``Aling`` Permite elegir la alineación de la salida; no siempre funciona correctamente.
+* ``height y Width`` Permiten definir el alto y ancho que ocupará la salida en px.
 
 ###Shiny Server
 
@@ -135,22 +136,22 @@ server <- function(input, output) {
 
 ```
 
-Como ya se mencionó el server lo que hace es realizar todas las operaciones internas para que la app funcione, para hacer esto shiny hace uso de las salidas y entradas con las que interactúa el usuario, para esto se utilizan dos comandos **Input\$ID de la entrada** y **output\$ID de la salida**, para llamar entradas y salidas respectivamente.
+Como ya se mencionó el server lo que hace es realizar todas las operaciones internas para que la app funcione, para hacer esto shiny hace uso de las salidas y entradas con las que interactúa el usuario, para esto se utilizan dos comandos ``Input\$ID`` para la entrada y ``output\$ID`` para la salida, para llamar entradas y salidas respectivamente.
 
-Shiny permite también crear una barra que permita tener una app multipágina, esto se hace utilizando el comando **tabPanel()** y dentro de la función lo que irá dentro de cada una de las pestañas. En el caso de que se quiere utilizar las mismas entradas para todas las pestañas se utiliza la función **tabsetPanel**.
+Shiny permite también crear una barra que permita tener una app multipágina, esto se hace utilizando el comando ``tabPanel()`` y dentro de la función lo que irá dentro de cada una de las pestañas. En el caso de que se quiere utilizar las mismas entradas para todas las pestañas se utiliza la función ``tabsetPanel``.
 
 <div class="row"><hr></div>
 
 ##Funciones importantes
 
 ###La función render
-Para poder que las salidas de la App sean dinámicas; es decir cambian con los cambios que realiza el usuario, Shiny hace uso de la función **render**, esta función puede cambiar dependiendo el tipo de salida que se tenga, para las salidas mencionadas en el punto anterior.
+Para poder que las salidas de la App sean dinámicas; es decir cambian con los cambios que realiza el usuario, Shiny hace uso de la función ``render``, esta función puede cambiar dependiendo el tipo de salida que se tenga, para las salidas mencionadas en el punto anterior.
 
-* **renderText: ** Para el código.
-* **renderPlot: **Para gráficos estáticos.
-* **renderPlotly: **Para gráficos de Plotly.
+* ``renderText`` Para el código.
+* ``renderPlot`` Para gráficos estáticos.
+* ``renderPlotly`` Para gráficos de Plotly.
 
-Existen otras opciones de esta función, cuya documentación en R o Rstudio se puede ver con el comando **?shiny::render** y la tecla tabular.
+Existen otras opciones de esta función, cuya documentación en R o Rstudio se puede ver con el comando ``?shiny::render`` y la tecla tabular.
 
 Dentro de la función render las funciones funcionan de la misma forma que lo hacen en un script de R.
 
@@ -174,7 +175,7 @@ Por ejemplo en el siguiente que de código cuando el usuario selecciona un año 
 
 ###Función Conditional
 
-En ocasiones también se requiere que toda la interfaz cambie según las opciones que elija el usuario para esto se utiliza la función **conditionalPanel**, lo  que permite que cuando se cumple una condición.
+En ocasiones también se requiere que toda la interfaz cambie según las opciones que elija el usuario para esto se utiliza la función ``conditionalPanel`` lo  que permite que cuando se cumple una condición.
 
 Esta función tiene como argumentos, ID y condición.
 
@@ -195,7 +196,7 @@ conditionalPanel("nombre",
 
 ##Integrar Shiny y Rmarkdown
 
-Es posible Integrar Shiny con  Rmarkdown, pudiendo generar cosas como simulaciones dentro de un Rmarkdown para esto se utiliza la librería **install_phantomjs** del paquete **webshot**. 
+Es posible Integrar Shiny con  Rmarkdown, pudiendo generar cosas como simulaciones dentro de un Rmarkdown para esto se utiliza la librería ``install_phantomjs`` del paquete ``webshot``*. 
 
 ```{r paqueteNes, eval= F}
 install.packages("webshot")
@@ -248,23 +249,22 @@ knitr::include_graphics("./images/shinyshot.png")
 [3] Xie, Yihui. 2018. bookdown: Authoring Books and Technical Documents with R Markdown <https://bookdown.org/yihui/bookdown/>
 
 <div class="nine" style="margin-top:12rem;">
-<hr>  
-<h3>Para ponerse en contacto, <a href="mailto:johanmarin@criptext.com">johanmarin@criptext.com</a>.</h3>
-</div>
-<div class="row" style="margin-top:5rem;">
-<hr class="f">
-<div class="footer">
-<a href="https://github.com/johanmarin" title="github @johanmarin" target="_blank">
-<div class="github social"></div>
-</a>
-<a href="https://twitter.com/JohanDMarinB" title="twitter @johanmarin" target="_blank">
-<div class="twitter social"></div>
-</a>
-&copy; <a class="social" href="mailto:johanmarin@criptext.com">Johan Marin</a>.  Made in COL.
-<a href="https://www.google.com/" title="blog @otterblog" target="_blank">
-<div class="logo2x social"></div>
-</a>
-</div>
-</div>
-</div>
+  <hr>  
+  <h3>Para ponerse en contacto, <a href="mailto:johanmarin@criptext.com">johanmarin@criptext.com</a>.</h3>
+  </div>
+  <div class="row" style="margin-top:5rem;">
+  <hr class="f">
+  <div class="footer">
+  <a href="https://github.com/johanmarin" title="github @johanmarin" target="_blank">
+  <div class="github social"></div>
+  </a>
+  &copy; 2019 <a class="social" href="https://www.linkedin.com/in/johan-david-mar%C3%ADn-benjumea-742a45142" target="_blank">Johan Marin</a>.  Made in COL.
+<a href="https://johanmarin.github.io/otterblog/" title="blog @otterblog" target="_blank">
+  <div class="logo2x social"></div>
+  </a>
+  </div>
+  </div>
+  </div>
+  </div>
+
 
