@@ -1,0 +1,71 @@
+---
+title: "Intruducción a R"
+output:
+  html_document:
+    highlight: tango
+    css: ../style.css
+    toc: true
+    toc_float: true
+---
+<script src="https://use.typekit.net/dru0rgp.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    
+```{r, echo = F}
+knitr::opts_chunk$set(cache  = TRUE, eval = TRUE, include = TRUE)
+```
+
+<div class="wrapper">
+
+## Corta historia
+
+[R](https://www.r-project.org/) es un lenguaje de programación multiparadigma, desarrollado por [Robert Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)) y [Ross Ihaka](https://en.wikipedia.org/wiki/Ross_Ihakan), en 1993,como una reimplementación de software libre del lenguaje [S](https://en.wikipedia.org/wiki/S_(programming_language)); desarrollado por Laboratorios Bell para el analísis de datos, combinado con las fortalezas del lenguaje  [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)). Desde entonces R ha sido desarrollado con la contribución de muchos colaboradores, es posible conocer lgunos de ellos utilizando el comando ``contributors()`` dentro del programa.
+
+Hoy día es uno de los más utilizados en investigación científica, muy popular en la minería de datos, la investigación biomédica, la bioinformática y las matemáticas financieras.
+
+## Getión de Paquetes en R
+
+* ``install.packages("packageName")`` r paquetesnstalPremite 
+* ``library(packageName)`` y ``require("packageName")`` Permiten importar los paquetes a la sección para poder utilizarlos
+
+<div class ="note">
+Aunque basicamente no existe diferencia significativa entre ambos, library() fue diseñada esencialmente para utilizar un paquete dentro de un script, mientras, require() para utilizar un paquete dentro de una función; que comprueba si se dispone o no del paquete, library por otro lado solo lanza un error y detiene el proceso.
+</div>
+
+* ``remove.packages("packageName")`` Permite eliminar paquetes de forma manual.
+* ``old.packages()`` Compara los paquetes que tenemos instalados en nuestro ordenador con los que se encuentran en CRAN, y nos proporciona una lista de aquellos que cuentan con una versión más moderna.
+* ``update.packages()`` R irá preguntando paquete por paquete si deseamos proceder o no a su actualización.
+* ``packageName::functionName`` Permite utilizar función de un paquete sin necesidad de cargarlo todo en la sección, es posible utilizarlo tambien cuando hay unafunción con el mismo nombre en paquetes diferentes y se requiere especificar cual de ellas se queire utilizar.
+
+## Ayuda
+
+* ``help()`` Tambien conocida como ayuda simple, es muy util cuando se quiere acceder a la documentación de un paquete ó una función, para conocer las proiedades de los mismos. En lugar de escribir esta función es equivalete utilizar ``?``.
+
+* ``help.search("functionName")`` Permite buscar una función si se tiene una idea aproximada del nombre de la función y creemos que puede encontrarse en alguno de los paquetes que ya tenemos instalados,R nos muestra el paquete (o paquetes) ya instalados en nuestro ordenador que contienen dicha función.Esta función es equivelente a usar ``??``.
+
+* ``sos::findFn("functionName")`` El paquete sos incorpora la función ``findFn()`` que permite realizar una búsqueda similar a la anterior, pero ahora sobre todos los paquetes en CRAN; R devuelve los resultados en una página web.
+
+* ``RSiteSearch("Name",restrict="restriction")`` Realiza la búsqueda sobre toda la web de R, y que también devuelve el resultado en una página web. Nótese que se puede restringir la búsqueda.
+
+
+
+##Referencias 
+[Wikipedia. S programming language](https://en.wikipedia.org/wiki/S_(programming_language))
+
+<div class="nine" style="margin-top:12rem;">
+  <hr>  
+  <h3>Para ponerse en contacto, <a href="mailto:johanmarin@criptext.com">johanmarin@criptext.com</a>.</h3>
+  </div>
+  <div class="row" style="margin-top:5rem;">
+  <hr class="f">
+  <div class="footer">
+  <a href="https://github.com/johanmarin" title="github @johanmarin" target="_blank">
+  <div class="github social"></div>
+  </a>
+  &copy; 2019 <a class="social" href="https://www.linkedin.com/in/johan-david-mar%C3%ADn-benjumea-742a45142" target="_blank">Johan Marin</a>.  Made in COL.
+<a href="https://johanmarin.github.io/otterblog/" title="blog @otterblog" target="_blank">
+  <div class="logo2x social"></div>
+  </a>
+  </div>
+  </div>
+  </div>
+  </div>

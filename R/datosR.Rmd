@@ -21,16 +21,16 @@ El lenguaje R  nos provee de un rico entorno para trabajar con datos; en especia
 ## Modo y Clase
 Todos los objetos de R contienen atibutos que describen la naturaleza de la información en ese objeto 
 
-*El modo*: la funcion **mode()** retorna el modo de cualquier objeto de R, los modos más comunes dentro de R son **numeric**, **character**, **logical**, **array**, **list**, **dataframe** y ***dataset**.
+*El modo*: la funcion ``mode()`` retorna el modo de cualquier objeto de R, los modos más comunes dentro de R son ``numeric``, ``character``, ``logical``, ``array``, ``list``, ``dataframe`` y ``dataset``.
 
-Cuando se almacenan datos categoricos R por defecto lo guarda con la clase **factor**, lo que permite utilizarols de forma automatica en graficas y modelos estadisticos, y además utilizar menos almacenamiento que los valores regulares, además cuando se aplica la función **mode()** sobre un dato de tipo factor este siempre será númerico.
+Cuando se almacenan datos categoricos R por defecto lo guarda con la clase ``factor``, lo que permite utilizarols de forma automatica en graficas y modelos estadisticos, y además utilizar menos almacenamiento que los valores regulares, además cuando se aplica la función ``mode()`` sobre un dato de tipo factor este siempre será númerico.
 
-Adicionalmente a las funciones **mode()** y **class()** existen otras funciones que brindan información adicional a cerca de los datos como **typeof()** aunque no son tan usadas como las dos primeras. 
+Adicionalmente a las funciones ``mode()`` y ``class()`` existen otras funciones que brindan información adicional a cerca de los datos como ``typeof()`` aunque no son tan usadas como las dos primeras. 
 
 
 
 ## Almacenamiento de datos en R
-Aunque es posible ingresar datos individuales a R, es común que se ingresen conjuntos de datos, para ello una forma rápida de hacerlo, cuando se ingresan de forma manual es utilizar la función concatenar **c()**
+Aunque es posible ingresar datos individuales a R, es común que se ingresen conjuntos de datos, para ello una forma rápida de hacerlo, cuando se ingresan de forma manual es utilizar la función concatenar ``c()``
 
 ```{r}
 x = c(1,2,5,10)
@@ -47,14 +47,14 @@ z = c(5,TRUE,3,7)
 z
 mode(z)
 ```
-Como se puede observar en los ejemplos anteriores, cuando se conbinan elementos con varios modos con la función **c** el conjunto de elemetos toman un modo general, en particular cuando se conbiana algún tipo de datos con un dato con modo **character** el conjunto toma el mismo modo, mientras que si se conbinan números con booleanos, los booleanos toman el valor númerico 1 para TRUE y 0 para FALSE.
+Como se puede observar en los ejemplos anteriores, cuando se conbinan elementos con varios modos con la función ``c`` el conjunto de elemetos toman un modo general, en particular cuando se conbiana algún tipo de datos con un dato con modo ``character`` el conjunto toma el mismo modo, mientras que si se conbinan números con booleanos, los booleanos toman el valor númerico 1 para TRUE y 0 para FALSE.
 
 ```{r}
 all = c(x,y,z)
 all
 mode(all)
 ```
-La función **c** tambien permite ponerle nombre a los datos o subconjuntos de datos ingresados.
+La función ``c`` tambien permite ponerle nombre a los datos o subconjuntos de datos ingresados.
 ```{r}
 x = c(one=1,two=2,three=3)
 x
@@ -74,7 +74,7 @@ x
 ```
 
 ## Vector
-Los datos de modo **vector** en R, son conjuntos de números que permiten realizar operaciones matematicas con escalares o entre vectores.
+Los datos de modo ``vector`` en R, son conjuntos de números que permiten realizar operaciones matematicas con escalares o entre vectores.
 ```{r}
 nums = 1:10
 nums
@@ -92,7 +92,7 @@ nums + c(1,2,3)
 ```
 
 ##La matrix
-los datos de modo **array**, son extensiones multidimensionales de los vectores, es decir, la posición de cada dato esta determinada por varias coordenadas; el más utilizado es el modo **matrix**, donde la posición de cada dato esta determinado por una coordenada que indica la fila y la segunda que indica la columna.
+los datos de modo ``array``, son extensiones multidimensionales de los vectores, es decir, la posición de cada dato esta determinada por varias coordenadas; el más utilizado es el modo ``matrix``, donde la posición de cada dato esta determinado por una coordenada que indica la fila y la segunda que indica la columna.
 ```{r}
 rmat = matrix(rnorm(15), 5, 3, dimnames=list(NULL,c("A","B","C")))
 rmat
@@ -102,10 +102,10 @@ Las matrices tienen las mismas probiedades de los vectores, solo que a diferenci
 dimnames(rmat) = list(c(1,2,3,4,5),c("a", "b", "c"))
 rmat
 ```
-en caso de solo querer asignar el nombre a una de las dimensiones es posible utilizar las funciones **row.names** y/o **col.names** según sea el caso.
+en caso de solo querer asignar el nombre a una de las dimensiones es posible utilizar las funciones ``row.names`` y/o ``col.names`` según sea el caso.
 
 ##la Lista
-La lista **list** es el modo más flexible de almacenar datos en R, ya qu permite almacenar objetos de diferentes tamaños y modos. para mirar los modos de los objetos en una lista se utiliza la función **sapply**
+La lista ``list`` es el modo más flexible de almacenar datos en R, ya qu permite almacenar objetos de diferentes tamaños y modos. para mirar los modos de los objetos en una lista se utiliza la función ``sapply``.
 
 ```{r}
 mylist = list(numbers=c(1,2,3),
@@ -123,17 +123,17 @@ mylist
 ```
 
 ## El Marco de datos
-Teniendo en cuenta como las propiedades de matrices y vetores, facilitan el trabajo con conjuntos de datos, en R se utiliza el  modo **data.frame**, que permite almacenar conjuntos de datos de diferentes modos y asignarles propiedades de las matrices, donde las columnas representan variables y las filas representan observaciones de cada variable.
+Teniendo en cuenta como las propiedades de matrices y vetores, facilitan el trabajo con conjuntos de datos, en R se utiliza el  modo ``data.frame``, que permite almacenar conjuntos de datos de diferentes modos y asignarles propiedades de las matrices, donde las columnas representan variables y las filas representan observaciones de cada variable.
 
-A diferencia de lo que sucede con las matrices, que si no se le indica hace que todos los datos tengan el mismo modo, en un data frame, cada una de las variables tengan un modo diferente, y la unica restricción es que todas las variables tengan el mismo número de obsevaciones; en caso de ser necesario rellenara las observaciones flatantes de una variable con **NANs**. Es decir un marco de datos es una lista con la restricción de que todas las variables tengan el mismo número de observaciones.
+A diferencia de lo que sucede con las matrices, que si no se le indica hace que todos los datos tengan el mismo modo, en un data frame, cada una de las variables tengan un modo diferente, y la unica restricción es que todas las variables tengan el mismo número de obsevaciones; en caso de ser necesario rellenara las observaciones flatantes de una variable con ``NANs``. Es decir un marco de datos es una lista con la restricción de que todas las variables tengan el mismo número de observaciones.
 
 ## Chequear el Modo y la clase de un Objeto en R
 
-En ocasiones no es facil conocer el modo de una clase utilizando las funciones **mode** o **class**, por lo que R permite preguntar si un objeto en R pertenece a un clase o esta almacenado con un modo en particular. Funciones como **is.list**, **is.factor**, **is.numeric**, **is.data.frame**, **is.character**, permiten conocer si los datos con los que se esta trabajando en un modmento pertenecen a la clase por la cual se esta preguntando.
+En ocasiones no es facil conocer el modo de una clase utilizando las funciones ``mode`` o ``class``, por lo que R permite preguntar si un objeto en R pertenece a un clase o esta almacenado con un modo en particular. Funciones como ``is.list``, ``is.factor``, ``is.numeric``, ``is.data.frame``, ``is.character``, permiten conocer si los datos con los que se esta trabajando en un modmento pertenecen a la clase por la cual se esta preguntando.
 
 ##Estructura de objetos en R
 
-Con los objetos simple como los mencionados anteriormente, generalmente basta con examinar el modo y la clase. Sin embargo en ocasiones con elementos de multiples modos y clases, es conveniente conocer el formato para cada una de las variables dentro del objeto, para lo cual se puede utilizar la fucnión **ls.str**.
+Con los objetos simple como los mencionados anteriormente, generalmente basta con examinar el modo y la clase. Sin embargo en ocasiones con elementos de multiples modos y clases, es conveniente conocer el formato para cada una de las variables dentro del objeto, para lo cual se puede utilizar la fucnión ``ls.str``.
 
 
 ```{r}
@@ -155,13 +155,13 @@ summary(nestlist)
 str(nestlist)
 ```
 
-Como puede observarse a diferencia del **summary()**,  el **str()** brinda infromación e cada uno de los componenetes del objeto.
+Como puede observarse a diferencia del ``summary()``,  el ``str()`` brinda infromación e cada uno de los componenetes del objeto.
 
 ##Conversión de objetos
 
 Usualmente a medida que se trabaja con los datos, es necesario hacer modiicaciones de estos, y entre estas modificaciones, una de las más comunes es cambiar el modo como esta lamacenado un objeto y/o la clase ala aque pertenece, cone el fin de asignarle otras propiedades para trabajr más facilmente con estos. 
 
-Para cambiar el modo y la clase de un objeto, se utiliza la función **as**, junto al nuevo modo como s quiere almacenar el objeto.
+Para cambiar el modo y la clase de un objeto, se utiliza la función ``as``, junto al nuevo modo como s quiere almacenar el objeto.
 
 ```{r}
 nums = c(12,10,8,12,10,12,8,10,12,8)
@@ -175,7 +175,7 @@ Como se puede observar el ojeto tt no esta almacenado en modo numerico, por lo q
 sum(as.numeric(names(tt)) * tt)
 ```
 
-Sin embargo hay que tener en cuenta que si no se utilizan correctamente la conversión se puede generara un cambio indeseado, por ejemplo existe una diferencia clara entre la fucnión **list** y la función  **as.list**, que por defecto es una lista de tamaño 1.
+Sin embargo hay que tener en cuenta que si no se utilizan correctamente la conversión se puede generara un cambio indeseado, por ejemplo existe una diferencia clara entre la fucnión ``list`` y la función  ``as.list``, que por defecto es una lista de tamaño 1.
 
 ```{r}
 x = c(1,2,3,4,5)
@@ -196,28 +196,26 @@ Como se evidencia en el ejemplo anterior basta con utilizar el operador para ele
 
 ##Valores faltantes
 
-Los valores faltantes, denominados por R como **NA**, pueden hacer parte del objeto original o pueden haber surgido duarante el proceso cmputacional, y es necesario tenerlos en cuenta ya que la presencia de estos puede generar cambios en los analisis.
+Los valores faltantes, denominados por R como ``NA``, pueden hacer parte del objeto original o pueden haber surgido duarante el proceso cmputacional, y es necesario tenerlos en cuenta ya que la presencia de estos puede generar cambios en los analisis.
 
-para identificar si un objeto es un valor faltante se puede utilizar la función **is.na**. Cuando se realizan procesos computacionales, se genera un Na, principalmente cuando el resultado de una operación es indeterminado, **NaN** o **Inf**.
+para identificar si un objeto es un valor faltante se puede utilizar la función ``is.na``. Cuando se realizan procesos computacionales, se genera un Na, principalmente cuando el resultado de una operación es indeterminado, ``NaN`` o ``Inf``.
 
 
 <div class="nine" style="margin-top:12rem;">
-<hr>  
-<h3>Para ponerse en contacto, <a href="mailto:johanmarin@criptext.com">johanmarin@criptext.com</a>.</h3>
-</div>
-<div class="row" style="margin-top:5rem;">
-<hr class="f">
-<div class="footer">
-<a href="https://github.com/johanmarin" title="github @johanmarin" target="_blank">
-<div class="github social"></div>
-</a>
-<a href="https://twitter.com/JohanDMarinB" title="twitter @johanmarin" target="_blank">
-<div class="twitter social"></div>
-</a>
-&copy; <a class="social" href="mailto:johanmarin@criptext.com">Johan Marin</a>.  Made in COL.
-<a href="https://www.google.com/" title="blog @otterblog" target="_blank">
-<div class="logo2x social"></div>
-</a>
-</div>
-</div>
-</div>
+  <hr>  
+  <h3>Para ponerse en contacto, <a href="mailto:johanmarin@criptext.com">johanmarin@criptext.com</a>.</h3>
+  </div>
+  <div class="row" style="margin-top:5rem;">
+  <hr class="f">
+  <div class="footer">
+  <a href="https://github.com/johanmarin" title="github @johanmarin" target="_blank">
+  <div class="github social"></div>
+  </a>
+  &copy; 2019 <a class="social" href="https://www.linkedin.com/in/johan-david-mar%C3%ADn-benjumea-742a45142" target="_blank">Johan Marin</a>.  Made in COL.
+<a href="https://johanmarin.github.io/otterblog/" title="blog @otterblog" target="_blank">
+  <div class="logo2x social"></div>
+  </a>
+  </div>
+  </div>
+  </div>
+  </div>
