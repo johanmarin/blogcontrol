@@ -46,8 +46,6 @@ Aunque basicamente no existe diferencia significativa entre ambos, library() fue
 
 * ``RSiteSearch("Name",restrict="restriction")`` Realiza la búsqueda sobre toda la web de R, y que también devuelve el resultado en una página web. Nótese que se puede restringir la búsqueda.
 
-
-
 ##Referencias 
 [Wikipedia. S programming language](https://en.wikipedia.org/wiki/S_(programming_language))
 

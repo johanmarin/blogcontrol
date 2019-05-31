@@ -1,5 +1,5 @@
 ---
-title: "Tipos de datos"
+title: "Etructuras de datos en R"
 output:
   html_document:
     highlight: tango
